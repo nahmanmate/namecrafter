@@ -5,7 +5,7 @@ module.exports = {
   mode: "development",
   entry: "./src/index.ts",
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".json"],
   },
   output: {
     filename: "main.js",
@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        type: "json"
       },
     ],
   },
