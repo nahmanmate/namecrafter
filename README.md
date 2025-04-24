@@ -14,6 +14,10 @@ yarn add namecrafter
 
 ## Usage
 
+There are three ways to use NameCrafter:
+
+### 1. Using Individual Methods (Recommended)
+
 ```typescript
 import { randomName, randomFirstName, randomMiddleName, randomLastName } from 'namecrafter';
 
@@ -26,16 +30,31 @@ const middleName = randomMiddleName(); // e.g. "Michael"
 const lastName = randomLastName(); // e.g. "Smith"
 ```
 
-```javascript
-const { randomName, randomFirstName, randomMiddleName, randomLastName } = require('namecrafter');
+### 2. Using the Default Instance
 
-// Generate a complete random name
-const fullName = randomName(); // e.g. "John Michael Smith"
+```typescript
+import nameGenerator from 'namecrafter';
 
-// Generate individual name parts
-const firstName = randomFirstName(); // e.g. "John"
-const middleName = randomMiddleName(); // e.g. "Michael"
-const lastName = randomLastName(); // e.g. "Smith"
+// Generate names using the default instance
+const fullName = nameGenerator.randomName();
+const firstName = nameGenerator.randomFirstName();
+const middleName = nameGenerator.randomMiddleName();
+const lastName = nameGenerator.randomLastName();
+```
+
+### 3. Creating Your Own Instance
+
+```typescript
+import { NameGenerator } from 'namecrafter';
+
+// Create a new instance
+const generator = new NameGenerator();
+
+// Generate names using your instance
+const fullName = generator.randomName();
+const firstName = generator.randomFirstName();
+const middleName = generator.randomMiddleName();
+const lastName = generator.randomLastName();
 ```
 
 ## Features
@@ -46,32 +65,54 @@ const lastName = randomLastName(); // e.g. "Smith"
 - 📚 Large dataset of authentic names
 - 🌐 Works in both Node.js and browser environments
 - ⚡ Lightning fast and memory efficient
+- 🔒 Proper encapsulation with class-based architecture
 
 ## API
 
-### `randomName()`
+### Class: `NameGenerator`
+
+The main class that provides name generation functionality.
+
+#### `new NameGenerator()`
+
+Creates a new instance of the NameGenerator class.
+
+#### Methods
+
+##### `randomName()`
 
 Returns a randomly generated full name as a string.
 
 **Returns**: `string` - A space-separated string containing a random first name, middle name, and last name.
 
-### `randomFirstName()`
+##### `randomFirstName()`
 
 Returns a randomly generated first name.
 
 **Returns**: `string` - A random first name.
 
-### `randomMiddleName()`
+##### `randomMiddleName()`
 
 Returns a randomly generated middle name.
 
 **Returns**: `string` - A random middle name.
 
-### `randomLastName()`
+##### `randomLastName()`
 
 Returns a randomly generated last name.
 
 **Returns**: `string` - A random last name.
+
+### Exported Functions
+
+For convenience, the default instance's methods are also exported as standalone functions:
+
+- `randomName()`
+- `randomFirstName()`
+- `randomMiddleName()`
+- `randomLastName()`
+
+These functions have the same behavior and return types as their corresponding class methods.
 
 ## License
 

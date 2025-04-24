@@ -1,4 +1,4 @@
-const { randomName, randomFirstName, randomMiddleName, randomLastName } = require('../dist/nameGenerator');
+import { randomName, randomFirstName, randomMiddleName, randomLastName } from '../dist/nameGenerator';
 
 // Test full name generation
 console.log('Testing full name generation:');
