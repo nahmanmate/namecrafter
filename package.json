@@ -1,7 +1,7 @@
 {
     "name": "namecrafter",
-    "version": "1.0.0",
-    "description": "Generate random full names including first, middle, and last names",
+    "version": "1.1.0",
+    "description": "Generate random names - full names or individual first, middle, and last names",
     "main": "dist/nameGenerator.js",
     "types": "dist/nameGenerator.d.ts",
     "files": [
@@ -21,8 +21,11 @@
         "name",
         "generator",
         "full-name",
-        "namecraft",
-        "identity"
+        "namecrafter",
+        "identity",
+        "first-name",
+        "middle-name",
+        "last-name"
     ],
     "author": "James Johns",
     "license": "MIT",

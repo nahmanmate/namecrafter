@@ -1,6 +1,6 @@
 # NameCrafter
 
-A powerful and elegant Node.js package for generating authentic-sounding full names. Create realistic first, middle, and last name combinations with a single function call.
+A powerful and elegant Node.js package for generating authentic-sounding names. Create realistic first, middle, and last names individually or as full name combinations.
 
 ## Installation
 
@@ -15,22 +15,32 @@ yarn add namecrafter
 ## Usage
 
 ```typescript
-import randomName from 'namecrafter';
+import { randomName, randomFirstName, randomMiddleName, randomLastName } from 'namecrafter';
 
-// Generate a random full name
-const name = randomName(); // e.g. "John Michael Smith"
+// Generate a complete random name
+const fullName = randomName(); // e.g. "John Michael Smith"
+
+// Generate individual name parts
+const firstName = randomFirstName(); // e.g. "John"
+const middleName = randomMiddleName(); // e.g. "Michael"
+const lastName = randomLastName(); // e.g. "Smith"
 ```
 
 ```javascript
-const randomName = require('namecrafter');
+const { randomName, randomFirstName, randomMiddleName, randomLastName } = require('namecrafter');
 
-// Generate a random full name
-const name = randomName(); // e.g. "John Michael Smith"
+// Generate a complete random name
+const fullName = randomName(); // e.g. "John Michael Smith"
+
+// Generate individual name parts
+const firstName = randomFirstName(); // e.g. "John"
+const middleName = randomMiddleName(); // e.g. "Michael"
+const lastName = randomLastName(); // e.g. "Smith"
 ```
 
 ## Features
 
-- ✨ Generates complete full names with first, middle, and last names
+- ✨ Generate complete full names or individual name parts
 - 🚀 Written in TypeScript with full type support
 - 📦 Zero dependencies
 - 📚 Large dataset of authentic names
@@ -44,6 +54,24 @@ const name = randomName(); // e.g. "John Michael Smith"
 Returns a randomly generated full name as a string.
 
 **Returns**: `string` - A space-separated string containing a random first name, middle name, and last name.
+
+### `randomFirstName()`
+
+Returns a randomly generated first name.
+
+**Returns**: `string` - A random first name.
+
+### `randomMiddleName()`
+
+Returns a randomly generated middle name.
+
+**Returns**: `string` - A random middle name.
+
+### `randomLastName()`
+
+Returns a randomly generated last name.
+
+**Returns**: `string` - A random last name.
 
 ## License
 
