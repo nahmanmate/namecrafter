@@ -1,19 +1,43 @@
 {
-  "scripts": {
-    "dev": "webpack serve --open"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "css-loader": "^6.8.1",
-    "html-loader": "^4.2.0",
-    "html-webpack-plugin": "^5.5.3",
-    "json-loader": "^0.5.7",
-    "prettier": "^3.5.3",
-    "style-loader": "^3.3.3",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.0.4",
-    "webpack": "^5.99.6",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.2.1"
-  }
+    "name": "namecrafter",
+    "version": "1.0.0",
+    "description": "Generate random full names including first, middle, and last names",
+    "main": "dist/nameGenerator.js",
+    "types": "dist/nameGenerator.d.ts",
+    "files": [
+        "dist",
+        "src/*.json"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "dev": "webpack serve --open",
+        "prepare": "npm run build",
+        "format": "prettier --write \"src/**/*.{js,ts,json,md}\"",
+        "format:check": "prettier --check \"src/**/*.{js,ts,json,md}\"",
+        "test": "node test/test.js"
+    },
+    "keywords": [
+        "random",
+        "name",
+        "generator",
+        "full-name",
+        "namecraft",
+        "identity"
+    ],
+    "author": "James Johns",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "css-loader": "^6.8.1",
+        "html-loader": "^4.2.0",
+        "html-webpack-plugin": "^5.5.3",
+        "json-loader": "^0.5.7",
+        "prettier": "^3.0.0",
+        "style-loader": "^3.3.3",
+        "ts-loader": "^9.4.4",
+        "typescript": "^5.0.4",
+        "webpack": "^5.99.6",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.2.1"
+    }
 }

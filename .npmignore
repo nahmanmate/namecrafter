@@ -1,0 +1,36 @@
+# Source
+src/*.js
+src/*.ts
+!src/*.json
+
+# Development
+.vscode/
+.idea/
+webpack.config.js
+tsconfig.json
+*.tsbuildinfo
+
+# Test files
+src/test.html
+src/template.html
+src/index.ts
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# System Files
+.DS_Store
+Thumbs.db
