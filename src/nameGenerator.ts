@@ -14,12 +14,16 @@ export class NameGenerator {
      * @returns {string} A randomly generated first name
      * @example
      * ```typescript
+     * // As a static method
      * import { NameGenerator } from 'namecrafter';
+     * const firstName = NameGenerator.randomFirstName(); // e.g. "John"
+     *
+     * // Or with an instance
      * const generator = new NameGenerator();
-     * const firstName = generator.randomFirstName(); // e.g. "John"
+     * const firstName = generator.randomFirstName();
      * ```
      */
-    public randomFirstName(): string {
+    public static randomFirstName(): string {
         return firstNames[Math.floor(Math.random() * firstNames.length)];
     }
 
@@ -28,12 +32,16 @@ export class NameGenerator {
      * @returns {string} A randomly generated middle name
      * @example
      * ```typescript
+     * // As a static method
      * import { NameGenerator } from 'namecrafter';
+     * const middleName = NameGenerator.randomMiddleName(); // e.g. "Michael"
+     *
+     * // Or with an instance
      * const generator = new NameGenerator();
-     * const middleName = generator.randomMiddleName(); // e.g. "Michael"
+     * const middleName = generator.randomMiddleName();
      * ```
      */
-    public randomMiddleName(): string {
+    public static randomMiddleName(): string {
         return middleNames[Math.floor(Math.random() * middleNames.length)];
     }
 
@@ -42,13 +50,38 @@ export class NameGenerator {
      * @returns {string} A randomly generated last name
      * @example
      * ```typescript
+     * // As a static method
      * import { NameGenerator } from 'namecrafter';
+     * const lastName = NameGenerator.randomLastName(); // e.g. "Smith"
+     *
+     * // Or with an instance
      * const generator = new NameGenerator();
-     * const lastName = generator.randomLastName(); // e.g. "Smith"
+     * const lastName = generator.randomLastName();
      * ```
      */
-    public randomLastName(): string {
+    public static randomLastName(): string {
         return lastNames[Math.floor(Math.random() * lastNames.length)];
+    }
+
+    /**
+     * Instance method for generating a random first name
+     */
+    public randomFirstName(): string {
+        return NameGenerator.randomFirstName();
+    }
+
+    /**
+     * Instance method for generating a random middle name
+     */
+    public randomMiddleName(): string {
+        return NameGenerator.randomMiddleName();
+    }
+
+    /**
+     * Instance method for generating a random last name
+     */
+    public randomLastName(): string {
+        return NameGenerator.randomLastName();
     }
 
     /**
@@ -72,3 +105,8 @@ export class NameGenerator {
 
 // Export the class as the default export
 export default NameGenerator;
+
+// Export static methods directly for easier access
+export const randomFirstName = NameGenerator.randomFirstName;
+export const randomMiddleName = NameGenerator.randomMiddleName;
+export const randomLastName = NameGenerator.randomLastName;

@@ -14,23 +14,32 @@ yarn add namecrafter
 
 ## Usage
 
-There are three ways to use NameCrafter:
+There are several ways to use NameCrafter, from simplest to most flexible:
 
-### 1. Using Individual Methods (Recommended)
+### 1. Using Direct Function Imports (Simplest)
 
 ```typescript
-import { randomName, randomFirstName, randomMiddleName, randomLastName } from 'namecrafter';
+import { randomFirstName, randomMiddleName, randomLastName, randomName } from 'namecrafter';
 
-// Generate a complete random name
-const fullName = randomName(); // e.g. "John Michael Smith"
-
-// Generate individual name parts
-const firstName = randomFirstName(); // e.g. "John"
-const middleName = randomMiddleName(); // e.g. "Michael"
-const lastName = randomLastName(); // e.g. "Smith"
+// Get string values directly
+const firstName = randomFirstName();    // e.g. "John"
+const middleName = randomMiddleName();  // e.g. "Michael"
+const lastName = randomLastName();      // e.g. "Smith"
+const fullName = randomName();          // e.g. "John Michael Smith"
 ```
 
-### 2. Using the Default Instance
+### 2. Using Static Methods
+
+```typescript
+import { NameGenerator } from 'namecrafter';
+
+// Use static methods directly from the class
+const firstName = NameGenerator.randomFirstName();    // e.g. "John"
+const middleName = NameGenerator.randomMiddleName();  // e.g. "Michael"
+const lastName = NameGenerator.randomLastName();      // e.g. "Smith"
+```
+
+### 3. Using the Default Instance
 
 ```typescript
 import nameGenerator from 'namecrafter';
@@ -42,7 +51,7 @@ const middleName = nameGenerator.randomMiddleName();
 const lastName = nameGenerator.randomLastName();
 ```
 
-### 3. Creating Your Own Instance
+### 4. Creating Your Own Instance
 
 ```typescript
 import { NameGenerator } from 'namecrafter';
@@ -60,6 +69,7 @@ const lastName = generator.randomLastName();
 ## Features
 
 - ✨ Generate complete full names or individual name parts
+- 🎯 Direct access to string-returning functions
 - 🚀 Written in TypeScript with full type support
 - 📦 Zero dependencies
 - 📚 Large dataset of authentic names
@@ -69,50 +79,54 @@ const lastName = generator.randomLastName();
 
 ## API
 
+### Direct Functions
+
+These are the simplest way to get string values:
+
+#### `randomFirstName()`
+Returns a random first name as a string.
+```typescript
+const name = randomFirstName(); // e.g. "John"
+```
+
+#### `randomMiddleName()`
+Returns a random middle name as a string.
+```typescript
+const name = randomMiddleName(); // e.g. "Michael"
+```
+
+#### `randomLastName()`
+Returns a random last name as a string.
+```typescript
+const name = randomLastName(); // e.g. "Smith"
+```
+
+#### `randomName()`
+Returns a complete random name as a string.
+```typescript
+const name = randomName(); // e.g. "John Michael Smith"
+```
+
 ### Class: `NameGenerator`
 
 The main class that provides name generation functionality.
 
-#### `new NameGenerator()`
+#### Static Methods
 
-Creates a new instance of the NameGenerator class.
+- `NameGenerator.randomFirstName()`
+- `NameGenerator.randomMiddleName()`
+- `NameGenerator.randomLastName()`
 
-#### Methods
+All static methods return strings and can be used without creating an instance.
 
-##### `randomName()`
+#### Instance Methods
 
-Returns a randomly generated full name as a string.
-
-**Returns**: `string` - A space-separated string containing a random first name, middle name, and last name.
-
-##### `randomFirstName()`
-
-Returns a randomly generated first name.
-
-**Returns**: `string` - A random first name.
-
-##### `randomMiddleName()`
-
-Returns a randomly generated middle name.
-
-**Returns**: `string` - A random middle name.
-
-##### `randomLastName()`
-
-Returns a randomly generated last name.
-
-**Returns**: `string` - A random last name.
-
-### Exported Functions
-
-For convenience, the default instance's methods are also exported as standalone functions:
-
-- `randomName()`
 - `randomFirstName()`
 - `randomMiddleName()`
 - `randomLastName()`
+- `randomName()`
 
-These functions have the same behavior and return types as their corresponding class methods.
+All instance methods return strings and require an instance of the class.
 
 ## License
 
